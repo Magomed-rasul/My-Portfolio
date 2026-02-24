@@ -1,3 +1,12 @@
-.Experience {
-  /* styles for Experience */
+.experience__heading{
+  font-family: "Cormorant SC", serif;
+  text-size-adjust: 100%;
+  font-feature-settings: normal;
+  font-size: 18px;
+  font-variation-settings: normal;
+  line-height: 24px;
+  tab-size: 4;
+  color: rgb(140, 140, 140);
+  margin-bottom: 40px;
+  margin-top: 40px;
 }

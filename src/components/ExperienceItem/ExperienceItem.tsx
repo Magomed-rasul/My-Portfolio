@@ -4,7 +4,7 @@ import styles from "./ExperienceItem.module.css";
 interface ExperienceItemProps {
   date: string;
   company: string;
-  description: string;
+  description: string[];
 }
 
 const ExperienceItem: React.FC<ExperienceItemProps> = ({
@@ -13,11 +13,18 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
   description,
 }) => {
   return (
-    <div className={styles.experienceItem}>
-      <div className={styles.experienceItem__date}>{date}</div>
-      <div className={styles.experienceItem__text}>
-        <div className={styles.experienceItem__company}>{company}</div>
-        <div className={styles.experienceItem__description}>{description}</div>
+    <div className={styles.wrapper}>
+      <div className={styles.date}>{date}</div>
+
+      <div className={styles.content}>
+        <div className={styles.company}>{company}</div>
+
+        <div className={styles.descriptionContainer}>
+          {description.map((item, index) => (
+            <p key={index} className={styles.description}>{item}</p>
+          ))}
+        </div>
+        
       </div>
     </div>
   );

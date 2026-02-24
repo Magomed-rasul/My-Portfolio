@@ -1,3 +1,65 @@
-.container {
-  /* styles for ExampleCase */
+.ExampleCase {
+  width: 708px;            /* фиксированная ширина для карточки */
+  flex-shrink: 0;          /* запрещаем сжатие в flex-контейнере */
+  box-sizing: border-box;
+}
+
+.ExampleCase__imageWrapper {
+  width: 708px;
+  height: 530px;
+  background: #161A1C;
+  border-radius: 32px;
+  overflow: hidden;        /* чтобы изображение не выходило за скруглённые углы */
+  box-sizing: border-box;
+}
+
+/* Вариант для web */
+.ExampleCase__imageWrapper_web {
+  padding: 106px 60px 32px 0; /* верх 106, право 60, низ 32, лево 0 */
+}
+
+/* Вариант для mobile */
+.ExampleCase__imageWrapper_mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Общие стили для изображения */
+.ExampleCase__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* заполняет контейнер, возможно обрезание */
+}
+
+/* Для mobile изображение должно быть не больше 562px по ширине и центрировано */
+.ExampleCase__imageWrapper_mobile .ExampleCase__image {
+  width: auto;
+  height: auto;
+  max-width: 562px;
+  max-height: 100%;
+  object-fit: contain;     /* сохраняет пропорции */
+}
+
+.ExampleCase__title {
+  margin-top: 32px;        /* отступ от картинки */
+  font-family: "Cormorant SC", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 80%;
+  letter-spacing: -0.05em;
+  color: rgb(31, 31, 31);
+  max-width: 361px;
+}
+
+.ExampleCase__desc {
+  font-family: "Cormorant SC", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: rgb(89, 89, 89);
 }

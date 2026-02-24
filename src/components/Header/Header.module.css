@@ -4,6 +4,7 @@
   justify-content: space-around;
   padding-bottom: 20px;
   border-bottom: 1px solid rgb(140, 140, 140);
+  font-family: "Cormorant SC", serif;
 }
 
 .header__block {
@@ -28,7 +29,16 @@
   font-feature-settings: normal;
   font-size: 16px;
   font-variation-settings: normal;
+  font-weight: 600;
   line-height: 24px;
-  text-decoration-color: rgb(20, 20, 20);
+  text-decoration: none;
   color: rgb(20, 20, 20);
+  transition: color 0.2s ease, font-weight 0.2s ease;
+  cursor: pointer;
+}
+
+.header__text:hover {
+  color: #0056b3;
+  font-weight: 600;
+  text-decoration: none;
 }

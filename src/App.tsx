@@ -10,7 +10,7 @@ function App() {
     <div className="wrapper">
       <Header />
       <Bio />
-      <Example />
+      <Example images={[]} />
       <About />
       <Experience />
     </div>

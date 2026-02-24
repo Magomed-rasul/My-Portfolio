@@ -1,19 +1,21 @@
 import React from "react";
-import styles from "./Example.module.css";
 import ExampleCase from "../ExampleCase/ExampleCase";
+import styles from "./Example.module.css"
 
-interface ExampleProps {
-  images:[];
-}
+const ExampleList: React.FC = () => {
+  const items = [
+    { type: "web", image: "/images/web1.jpg", title: "Заголовок 1", desc: "Описание проекта 1" },
+    { type: "mobile", image: "/images/mob1.jpg", title: "Заголовок 2", desc: "Описание мобильного приложения" },
 
-const Example: React.FC<ExampleProps> = () => {
+  ];
+
   return (
-    <div className={styles.Example}>
-      <div className={styles.Example__title}>
-        <ExampleCase type={"mobile"} image={undefined} />
-      </div>
+    <div className={styles.scrollContainer}>
+      {items.map((item, index) => (
+        <ExampleCase key={index} {...item} />
+      ))}
     </div>
   );
 };
 
-export default Example;
+export default ExampleList;
