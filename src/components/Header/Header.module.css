@@ -34,7 +34,7 @@
   display: block;
   text-decoration: none;
   color: #444444;
-  transition: color 0.2s ease, font-weight 0.2s ease;
+  transition: color 0.2s ease, font-weight 0.2s ease, text-shadow 0.2s ease;
   cursor: pointer;
 }
 
@@ -42,4 +42,37 @@
   color: #0056b3;
   font-weight: 600;
   text-decoration: none;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* тёмная ambient-подсветка */
+}
+
+/* Адаптив для мобильных устройств (до 640px) */
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;  /* элементы в колонку */
+    align-items: stretch;
+    gap: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header__block {
+    border-left: none;        /* убираем вертикальные линии */
+    padding-left: 0;
+    width: 100%;              /* каждый блок занимает всю ширину */
+  }
+
+  /* Разделители между блоками (кроме последнего) */
+  .header__block:not(:last-child) {
+    border-bottom: 1px solid rgb(140, 140, 140);
+    padding-bottom: 8px;
+  }
+
+  .header__title {
+    font-size: 14px;          /* чуть мельче заголовок */
+  }
+
+  .header__text {
+    font-size: 14px;          /* чуть мельче текст */
+    text-align: left;         /* выравнивание влево */
+  }
 }

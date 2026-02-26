@@ -15,7 +15,7 @@ const ExampleCase: React.FC<ExampleCaseProps> = ({ type, image, title, desc }) =
       : `${styles.ExampleCase__imageWrapper} ${styles.ExampleCase__imageWrapper_mobile}`;
 
   return (
-    <div className={styles.ExampleCase}>
+    <div className={styles.ExampleCase} data-testid="example-case">
       <div className={imageWrapperClass}>
         <img className={styles.ExampleCase__image} src={image} alt={title} />
       </div>

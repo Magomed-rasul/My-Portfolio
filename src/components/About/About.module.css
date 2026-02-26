@@ -26,5 +26,36 @@
   line-height: 26px;
   color: #444;
   max-width: 70%;
+}
 
+/* Адаптация для планшетов и мобильных устройств */
+@media (max-width: 768px) {
+  .about {
+    padding: 16px 16px; /* добавляем боковые отступы для всего блока */
+  }
+
+  .about__heading {
+    font-size: 14px; /* можно чуть уменьшить заголовок */
+    text-align: left; /* или center, если нужно */
+  }
+
+  .about__text {
+    max-width: 100%;       /* убираем ограничение ширины */
+    font-size: 14px;       /* небольшая корректировка размера */
+    line-height: 24px;
+    word-spacing: 1px;
+  }
+}
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+  .about {
+    padding: 12px 12px;
+  }
+
+  .about__text {
+    font-size: 14px;
+    line-height: 22px;
+    word-spacing: 1px;
+  }
 }

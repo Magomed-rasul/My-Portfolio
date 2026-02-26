@@ -1,3 +1,4 @@
+/* Базовые стили (оставляем как есть) */
 .wrapper {
   max-width: 1320px;
   display: grid;
@@ -6,25 +7,18 @@
   margin-bottom: 50px;
 }
 
-.date,
-.company,
-.description {
-  font-family: "Martian Mono", monospace;
-  line-height: 24px;
-  font-feature-settings: normal;
-  font-variation-settings: normal;
-  white-space: wrap;
-}
-
 .date {
   font-size: 18px;
   color: rgb(89, 89, 89);
+  white-space: pre-line; /* сохраняет переносы строк из шаблонной строки */
+  font-family: "Martian Mono", monospace;
 }
 
 .content {
   width: 100%;
   display: flex;
   flex-direction: column;
+  font-family: "Martian Mono", monospace;
 }
 
 .company {
@@ -32,18 +26,75 @@
   color: rgb(0, 0, 0);
   border: 1px solid rgb(31, 31, 31);
   padding: 8px 12px;
-  align-self: flex-start; /* предотвращает растягивание на всю ширину */
+  align-self: flex-start; /* по умолчанию ширина по содержимому */
 }
 
 .descriptionContainer {
-  margin-top: 15px; /* отступ от компании */
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
-  gap: 8px; /* расстояние между параграфами */
+  gap: 8px;
 }
 
 .description {
   font-size: 16px;
   color: rgb(0, 0, 0);
-  margin: 0; /* убираем стандартные отступы p */
+  margin: 0;
+}
+
+/* Медиа-запрос для экранов до 768px */
+@media (max-width: 768px) {
+  .wrapper {
+    display: block; /* отключаем грид, элементы идут вертикально */
+    margin-bottom: 40px; /* можно уменьшить отступ для мобильных */
+  }
+
+  .date {
+    font-size: 16px; /* уменьшаем размер шрифта */
+    margin-bottom: 8px; /* добавляем отступ снизу перед компанией */
+    white-space: wrap;
+  }
+
+  .company {
+    align-self: stretch; /* растягиваем на всю ширину */
+    width: 60%; /* гарантируем ширину 100% */
+  }
+  .description {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    word-wrap: 2px;
+    line-height: 24px;
+
+  }
+
+  .descriptionContainer {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 425px) {
+
+
+  .date {
+    font-size: 14px; /* уменьшаем размер шрифта */
+    margin-bottom: 8px; /* добавляем отступ снизу перед компанией */
+    white-space: wrap;
+  }
+
+  .company {
+    align-self: stretch; /* растягиваем на всю ширину */
+    width: 100%; /* гарантируем ширину 100% */
+    margin-top: 5px;
+  }
+  .description {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    word-wrap: 0px;
+    line-height: 20px;
+
+  }
+
+  .descriptionContainer {
+    gap: 12px;
+  }
 }

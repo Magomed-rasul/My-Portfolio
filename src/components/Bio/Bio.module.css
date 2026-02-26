@@ -53,10 +53,147 @@
 }
 
 @keyframes blink {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     opacity: 1;
   }
-  25%, 75% {
+  25%,
+  75% {
     opacity: 0;
+  }
+}
+
+/* Адаптив для средних экранов (до 1200px) */
+@media (max-width: 1200px) {
+  .bio__name {
+    font-size: 48px;
+    line-height: 52px;
+  }
+  .cursor {
+    height: 52px;
+  }
+}
+
+@media (max-width: 1084px) {
+  .bio {
+    gap: 30px;
+  }
+  .bio__name {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  .cursor {
+    height: 44px;
+  }
+  .bio__profession {
+    font-size: 20px;
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 940px) {
+  .bio {
+    gap: 20px;
+  }
+  .bio__name {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .cursor {
+    height: 44px;
+  }
+  .bio__profession {
+    font-size: 20px;
+    padding-left: 15px;
+  }
+}
+
+/* Адаптив для узких экранов (до 768px) — вертикальное расположение */
+@media (max-width: 768px) {
+  .bio {
+    flex-direction: column;
+    align-items: flex-start; /* или center, если нужно центрировать */
+    gap: 20px;
+    padding-top: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .bio__image {
+    width: 140px;
+    height: 140px;
+  }
+  .bio__name {
+    font-size: 32px;
+    line-height: 36px;
+    flex-wrap: wrap;
+  }
+  .cursor {
+    height: 36px;
+  }
+  .bio__profession {
+    font-size: 18px;
+    padding-left: 0;
+    margin-top: 4px;
+  }
+}
+
+/* Адаптив для мобильных (до 640px) — уже был (можно оставить как есть или объединить с предыдущим) */
+@media (max-width: 640px) {
+  .bio {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 32px 16px 20px;
+  }
+  .bio__image {
+    width: 120px;
+    height: 120px;
+  }
+  .bio__name {
+    font-size: 24px;
+    line-height: 34px;
+    flex-wrap: wrap;
+  }
+  .cursor {
+    height: 36px;
+  }
+  .bio__profession {
+    font-size: 16px;
+    padding-left: 0;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 475px) {
+  .bio {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 32px 0px 20px;
+  }
+  .bio__image {
+    width: 160px;
+    height: 160px;
+    align-self: center;
+  }
+  .bio__name {
+    font-size: 18px;
+    line-height: 30px;
+    flex-wrap: wrap;
+    align-self: center;
+  }
+  .cursor {
+    height: 36px;
+    align-self: center;
+  }
+  .bio__profession {
+    font-size: 16px;
+    padding-left: 0;
+    margin-top: 4px;
+    align-self: center;
+  }
+  .bio__text {
+    align-self: center;
   }
 }

@@ -1,15 +1,20 @@
-/* Example.module.css */
+/* Базовые стили с box-sizing для всех элементов внутри */
+.header,
+.header *,
+.scrollContainer,
+.scrollContainer * {
+  box-sizing: border-box;
+}
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px; /* отступ от заголовка до списка */
+  margin-bottom: 20px;
 }
 
 .title {
   font-family: "Martian Mono", monospace;
-  text-size-adjust: 100%;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -20,8 +25,8 @@
 
 .buttons {
   display: flex;
-  margin-top: 15px;
   gap: 16px;
+  margin-top: 15px;
 }
 
 .button {
@@ -29,7 +34,7 @@
   height: 40px;
   background: transparent;
   border: 1px solid black;
-  border-radius: 50%;       /* делаем кнопки круглыми */
+  border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -38,24 +43,37 @@
 }
 
 .button:hover {
-  background: rgba(0, 0, 0, 0.05); /* очень лёгкий серый при наведении */
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .scrollContainer {
   display: flex;
   overflow-x: auto;
   gap: 24px;
-  padding-top: 20px;
-  scrollbar-width: thin;
-
-  scrollbar-width: none;     /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer / Edge */
+  padding: 20px 0;
+  width: 100%;
+  max-width: 100%;
+  scrollbar-width: none;    /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
 .scrollContainer::-webkit-scrollbar {
   display: none;
 }
 
-.scrollContainer::-webkit-scrollbar-thumb {
-  display: none;
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .button {
+    width: 32px;
+    height: 32px;
+  }
+  .button svg {
+    width: 12px;
+    height: auto;
+  }
+
+  .scrollContainer {
+    gap: 16px;
+    padding: 12px 0;
+  }
 }

@@ -1,13 +1,42 @@
 body {
-  background-color:#fff;
+  background-color: #fff;
   padding: 35px 60px;
   margin: 0;
 }
 
 .wrapper {
   max-width: 1440px;
-  height: 100vh;
+  min-height: 100vh;  /* заменяем height на min-height для адаптивности */
   margin: 0 auto;
   box-sizing: border-box;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+
+/* Адаптация для планшетов и мобильных */
+@media (max-width: 1024px) {
+  body {
+    padding: 30px 40px; /* уменьшаем боковые отступы */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 25px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px 15px; /* минимальные отступы на маленьких экранах */
+  }
+}
+
+/* Дополнительная опция: если нужно убрать лишнее пространство снизу при min-height: 100vh */
+html, body {
+  height: 100%; /* для правильной работы min-height */
+}
