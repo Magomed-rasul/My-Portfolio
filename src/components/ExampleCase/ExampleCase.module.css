@@ -1,65 +1,63 @@
 .ExampleCase {
-  width: 708px;            /* фиксированная ширина для карточки */
-  flex-shrink: 0;          /* запрещаем сжатие в flex-контейнере */
+  width: 442px;            /* ширина карточки уменьшена вдвое (708 / 2) */
+  flex-shrink: 0;
   box-sizing: border-box;
 }
 
 .ExampleCase__imageWrapper {
-  width: 708px;
-  height: 530px;
-  background: #161A1C;
-  border-radius: 32px;
-  overflow: hidden;        /* чтобы изображение не выходило за скруглённые углы */
+  width: 442px;
+  height: 331px;           /* высота уменьшена вдвое (530 / 2) */
+  background: #f5f5f5;
+  border-radius: 16px;     /* скругление тоже можно уменьшить пропорционально */
+  overflow: hidden;
   box-sizing: border-box;
 }
 
 /* Вариант для web */
 .ExampleCase__imageWrapper_web {
-  padding: 106px 60px 32px 0; /* верх 106, право 60, низ 32, лево 0 */
+  padding: 53px 30px 16px 0; /* отступы пересчитаны: 106/2=53, 60/2=30, 32/2=16 */
 }
 
 /* Вариант для mobile */
 .ExampleCase__imageWrapper_mobile {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
-/* Общие стили для изображения */
 .ExampleCase__image {
   display: block;
-  width: 100%;
   height: 100%;
-  object-fit: cover;       /* заполняет контейнер, возможно обрезание */
+  object-fit: cover;
 }
 
-/* Для mobile изображение должно быть не больше 562px по ширине и центрировано */
+/* Для mobile изображение центрируется и не превышает 281px (562/2) */
 .ExampleCase__imageWrapper_mobile .ExampleCase__image {
   width: auto;
-  height: auto;
-  max-width: 562px;
+  height: 100%;
+  max-width: 281px;
   max-height: 100%;
-  object-fit: contain;     /* сохраняет пропорции */
+  object-fit: contain;
 }
 
 .ExampleCase__title {
-  margin-top: 32px;        /* отступ от картинки */
-  font-family: "Cormorant SC", serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 40px;
+  margin-top: 20px;       /* отступ от картинки (можно оставить, либо уменьшить) */
+  font-family: "Martian Mono", monospace;
+  font-weight: 600;
+  font-size: 28px;
   line-height: 80%;
   letter-spacing: -0.05em;
   color: rgb(31, 31, 31);
-  max-width: 361px;
+  max-width: 361px;        /* при желании можно тоже уменьшить */
 }
 
 .ExampleCase__desc {
-  font-family: "Cormorant SC", serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 140%;
+  font-family: "Martian Mono", monospace;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
   letter-spacing: -0.02em;
   color: rgb(89, 89, 89);
+  max-width: 67%;
 }

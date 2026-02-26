@@ -5,7 +5,7 @@
   padding-top: 56px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgb(140, 140, 140);
-  font-family: "Cormorant SC", serif;
+  font-family: "Martian Mono", monospace;
 }
 
 .bio__image {
@@ -18,18 +18,17 @@
 .bio__text {
   display: flex;
   flex-direction: column;
-  font-family: "Cormorant SC", serif;
+  font-family: "Martian Mono", monospace;
 }
 
 .bio__name {
   display: flex;
   align-items: center;
-  font-size: 60px;
+  font-size: 55px;
   line-height: 60px;
   font-weight: 400;
   color: rgb(20, 20, 20);
-  white-space: pre; /* сохраняет пробелы */
-  font-family: "Cormorant SC", serif;
+  font-family: "Martian Mono", monospace;
 }
 
 .char {
@@ -49,7 +48,7 @@
   line-height: 32px;
   color: rgb(140, 140, 140);
   margin-top: 8px;
-  font-family: "Cormorant SC", serif;
+  font-family: "Martian Mono", monospace;
   padding-left: 25px;
 }
 

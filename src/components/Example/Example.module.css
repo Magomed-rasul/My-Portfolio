@@ -1,3 +1,61 @@
-.container {
-  /* styles for Example */
+/* Example.module.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* отступ от заголовка до списка */
+}
+
+.title {
+  font-family: "Martian Mono", monospace;
+  text-size-adjust: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  word-spacing: 6px;
+  line-height: 20px;
+  color: #999;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 15px;
+  gap: 16px;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid black;
+  border-radius: 50%;       /* делаем кнопки круглыми */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background: rgba(0, 0, 0, 0.05); /* очень лёгкий серый при наведении */
+}
+
+.scrollContainer {
+  display: flex;
+  overflow-x: auto;
+  gap: 24px;
+  padding-top: 20px;
+  scrollbar-width: thin;
+
+  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer / Edge */
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  display: none;
 }
